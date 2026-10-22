@@ -1,0 +1,46 @@
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true                                                                              0.04s  
+
+   PASS  Tests\Feature\BookstoreApiTest
+  ✓ user can register                                                                              4.83s  
+  ✓ register requires valid data                                                                   0.31s  
+  ✓ register rejects duplicate email                                                               0.49s  
+  ✓ user can login with valid credentials                                                          0.40s  
+  ✓ login fails with invalid credentials                                                           0.20s  
+  ✓ user can logout                                                                                0.28s  
+  ✓ logout does not crash under stateful session auth                                              0.25s  
+  ✓ logout revokes bearer token even if session resolves user                                      0.26s  
+  ✓ user can submit review                                                                         0.18s  
+  ✓ user cannot review same book twice                                                             0.31s  
+  ✓ review validates rating range                                                                  0.47s  
+  ✓ review returns 404 for missing book                                                            0.26s  
+  ✓ user can list book reviews                                                                     0.37s  
+  ✓ admin can list books                                                                           0.14s  
+  ✓ admin can create book                                                                          0.25s  
+  ✓ admin can update book rating                                                                   0.29s  
+  ✓ checkout creates order from cart                                                               0.34s  
+  ✓ checkout fails on empty cart                                                                   0.30s  
+  ✓ checkout requires shipping address                                                             0.24s  
+  ✓ user can view order history                                                                    0.12s  
+  ✓ user can cancel pending order                                                                  0.23s  
+  ✓ books can be listed with search and filters                                                    0.24s  
+  ✓ book detail includes reviews and average rating                                                0.38s  
+  ✓ book list allows pagination and sorting                                                        0.10s  
+  ✓ user can add to cart                                                                           0.20s  
+  ✓ user can update and remove cart items                                                          0.26s  
+  ✓ user can view cart with total amount                                                           0.17s  
+  ✓ cart rejects out of stock books                                                                0.16s  
+  ✓ cart rejects quantity beyond stock                                                             0.21s  
+  ✓ user cannot modify other users cart items                                                      0.18s  
+  ✓ wishlist toggle adds and removes                                                               0.13s  
+  ✓ user can list wishlist                                                                         0.12s  
+  ✓ guest cannot access protected routes                                                           0.09s  
+  ✓ user can get and update profile                                                                0.09s  
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response                                                  0.36s  
+
+  Tests:    36 passed (124 assertions)
+  Duration: 16.96s
+

@@ -1,0 +1,46 @@
+﻿
+   PASS  Tests\Unit\ExampleTest
+  Γ£ô that true is true                                                                              0.02s  
+
+   PASS  Tests\Feature\BookstoreApiTest
+  Γ£ô user can register                                                                              2.68s  
+  Γ£ô register requires valid data                                                                   0.30s  
+  Γ£ô register rejects duplicate email                                                               0.20s  
+  Γ£ô user can login with valid credentials                                                          0.19s  
+  Γ£ô login fails with invalid credentials                                                           0.23s  
+  Γ£ô user can logout                                                                                0.59s  
+  Γ£ô logout does not crash under stateful session auth                                              0.81s  
+  Γ£ô logout revokes bearer token even if session resolves user                                      0.20s  
+  Γ£ô user can submit review                                                                         0.26s  
+  Γ£ô user cannot review same book twice                                                             0.12s  
+  Γ£ô review validates rating range                                                                  0.16s  
+  Γ£ô review returns 404 for missing book                                                            0.18s  
+  Γ£ô user can list book reviews                                                                     0.20s  
+  Γ£ô admin can list books                                                                           0.30s  
+  Γ£ô admin can create book                                                                          0.14s  
+  Γ£ô admin can update book rating                                                                   0.18s  
+  Γ£ô checkout creates order from cart                                                               0.39s  
+  Γ£ô checkout fails on empty cart                                                                   0.12s  
+  Γ£ô checkout requires shipping address                                                             0.12s  
+  Γ£ô user can view order history                                                                    0.19s  
+  Γ£ô user can cancel pending order                                                                  0.25s  
+  Γ£ô books can be listed with search and filters                                                    0.17s  
+  Γ£ô book detail includes reviews and average rating                                                0.12s  
+  Γ£ô book list allows pagination and sorting                                                        0.12s  
+  Γ£ô user can add to cart                                                                           0.17s  
+  Γ£ô user can update and remove cart items                                                          0.16s  
+  Γ£ô user can view cart with total amount                                                           0.25s  
+  Γ£ô cart rejects out of stock books                                                                0.46s  
+  Γ£ô cart rejects quantity beyond stock                                                             0.32s  
+  Γ£ô user cannot modify other users cart items                                                      0.22s  
+  Γ£ô wishlist toggle adds and removes                                                               0.23s  
+  Γ£ô user can list wishlist                                                                         0.24s  
+  Γ£ô guest cannot access protected routes                                                           0.23s  
+  Γ£ô user can get and update profile                                                                0.30s  
+
+   PASS  Tests\Feature\ExampleTest
+  Γ£ô the application returns a successful response                                                  0.58s  
+
+  Tests:    36 passed (124 assertions)
+  Duration: 13.02s
+

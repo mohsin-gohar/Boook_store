@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.x'
+          channel: stable
+
+      - run: flutter pub get
+        working-directory: ./bookstore_app
+
+      - run: flutter analyze
+        working-directory: ./bookstore_app
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.x'
+          channel: stable
+
+      - run: flutter pub get
+        working-directory: ./bookstore_app
+
+      - run: flutter test
+        working-directory: ./bookstore_app
+
+  api-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist
+        working-directory: ./online-bookstore-api
+
+      - name: Run Pint lint check
+        run: vendor/bin/pint --test
+        working-directory: ./online-bookstore-api
+
+      - name: Run PHPUnit tests
+        run: vendor/bin/phpunit
+        working-directory: ./online-bookstore-api
+        env:
+          APP_ENV: testing
+          APP_DEBUG: false
+          DB_CONNECTION: sqlite
+          DB_DATABASE: :memory:

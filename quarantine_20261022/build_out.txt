@@ -1,0 +1,39 @@
+Running Gradle task 'assembleRelease'...                        
+
+F:\flutter\online_bookstore\bookstore_app\android>if "Windows_NT" == "Windows_NT" setlocal
+
+F:\flutter\online_bookstore\bookstore_app\android>set DEFAULT_JVM_OPTS= 
+
+F:\flutter\online_bookstore\bookstore_app\android>set DIRNAME=F:\flutter\online_bookstore\bookstore_app\android\ 
+
+F:\flutter\online_bookstore\bookstore_app\android>if "F:\flutter\online_bookstore\bookstore_app\android\" == "" set DIRNAME=. 
+
+F:\flutter\online_bookstore\bookstore_app\android>set APP_BASE_NAME=gradlew 
+
+F:\flutter\online_bookstore\bookstore_app\android>set APP_HOME=F:\flutter\online_bookstore\bookstore_app\android\ 
+
+F:\flutter\online_bookstore\bookstore_app\android>if defined JAVA_HOME goto findJavaFromJavaHome 
+
+F:\flutter\online_bookstore\bookstore_app\android>set JAVA_HOME=C:\Program Files\Android\Android Studio\jbr 
+
+F:\flutter\online_bookstore\bookstore_app\android>set JAVA_EXE=C:\Program Files\Android\Android Studio\jbr/bin/java.exe 
+
+F:\flutter\online_bookstore\bookstore_app\android>if exist "C:\Program Files\Android\Android Studio\jbr/bin/java.exe" goto init 
+
+F:\flutter\online_bookstore\bookstore_app\android>if not "Windows_NT" == "Windows_NT" goto win9xME_args 
+
+F:\flutter\online_bookstore\bookstore_app\android>if "@eval[2+2]" == "4" goto 4NT_args 
+
+F:\flutter\online_bookstore\bookstore_app\android>set CMD_LINE_ARGS= 
+
+F:\flutter\online_bookstore\bookstore_app\android>set _SKIP=2 
+
+F:\flutter\online_bookstore\bookstore_app\android>if "x-q" == "x" goto execute 
+
+F:\flutter\online_bookstore\bookstore_app\android>set CMD_LINE_ARGS=-q -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib\main.dart -Pbase-application-name=android.app.Application -Pdart-defines=RkxVVFRFUl9CVUlMRF9OQU1FPTEuMC4w,RkxVVFRFUl9CVUlMRF9OVU1CRVI9MQ==,RkxVVFRFUl9WRVJTSU9OPTMuNDcuNQ==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049NmExOWNjYTU2NA==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049YWY3ZTc5NmUxNg==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMy40 -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=true -Pflutter.androidSdkRoot=C:\Users\mohsi\AppData\Local\Android\sdk -Pflutter.installedNdkVersions=28.2.13676358 -Pflutter.sdkManagerPath=C:\Users\mohsi\AppData\Local\Android\sdk\cmdline-tools\latest\bin\sdkmanager.bat assembleRelease 
+
+F:\flutter\online_bookstore\bookstore_app\android>goto execute 
+
+F:\flutter\online_bookstore\bookstore_app\android>set CLASSPATH=F:\flutter\online_bookstore\bookstore_app\android\\gradle\wrapper\gradle-wrapper.jar 
+
+F:\flutter\online_bookstore\bookstore_app\android>"C:\Program Files\Android\Android Studio\jbr/bin/java.exe"    "-Dorg.gradle.appname=gradlew" -classpath "F:\flutter\online_bookstore\bookstore_app\android\\gradle\wrapper\gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain -q -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib\main.dart -Pbase-application-name=android.app.Application -Pdart-defines=RkxVVFRFUl9CVUlMRF9OQU1FPTEuMC4w,RkxVVFRFUl9CVUlMRF9OVU1CRVI9MQ==,RkxVVFRFUl9WRVJTSU9OPTMuNDcuNQ==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049NmExOWNjYTU2NA==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049YWY3ZTc5NmUxNg==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMy40 -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=true -Pflutter.androidSdkRoot=C:\Users\mohsi\AppData\Local\Android\sdk -Pflutter.installedNdkVersions=28.2.13676358 -Pflutter.sdkManagerPath=C:\Users\mohsi\AppData\Local\Android\sdk\cmdline-tools\latest\bin\sdkmanager.bat assembleRelease 
