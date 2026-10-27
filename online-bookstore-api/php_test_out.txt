@@ -1,0 +1,50 @@
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true                                                                                            1.58s  
+
+   PASS  Tests\Feature\BookstoreApiTest
+  ✓ user can register                                                                                           23.48s  
+  ✓ register requires valid data                                                                                 0.53s  
+  ✓ register rejects duplicate email                                                                             2.60s  
+  ✓ user can login with valid credentials                                                                        0.21s  
+  ✓ login fails with invalid credentials                                                                         0.05s  
+  ✓ user can logout                                                                                              0.56s  
+  ✓ logout does not crash under stateful session auth                                                            0.20s  
+  ✓ logout revokes bearer token even if session resolves user                                                    0.05s  
+  ✓ user can submit review                                                                                       0.49s  
+  ✓ user cannot review same book twice                                                                           0.12s  
+  ✓ review validates rating range                                                                                0.20s  
+  ✓ review returns 404 for missing book                                                                          0.08s  
+  ✓ user can list book reviews                                                                                   0.53s  
+  ✓ admin can list books                                                                                         0.24s  
+  ✓ admin can create book                                                                                        0.08s  
+  ✓ admin can update book rating                                                                                 0.14s  
+  ✓ checkout creates order from cart                                                                             0.55s  
+  ✓ checkout fails on empty cart                                                                                 0.08s  
+  ✓ checkout requires shipping address                                                                           0.08s  
+  ✓ user can view order history                                                                                  0.10s  
+  ✓ user can cancel pending order                                                                                0.10s  
+  ✓ books can be listed with search and filters                                                                  0.08s  
+  ✓ book detail includes reviews and average rating                                                              0.05s  
+  ✓ book list allows pagination and sorting                                                                      0.04s  
+  ✓ user can add to cart                                                                                         0.07s  
+  ✓ user can update and remove cart items                                                                        0.08s  
+  ✓ user can view cart with total amount                                                                         0.05s  
+  ✓ cart rejects out of stock books                                                                              0.06s  
+  ✓ cart rejects quantity beyond stock                                                                           0.09s  
+  ✓ user cannot modify other users cart items                                                                    0.10s  
+  ✓ wishlist toggle adds and removes                                                                             0.07s  
+  ✓ user can list wishlist                                                                                       0.06s  
+  ✓ guest cannot access protected routes                                                                         0.09s  
+  ✓ user can get and update profile                                                                              0.09s  
+  ✓ forgot password sends the reset code by mail                                                                 1.07s  
+  ✓ forgot password does not leak unknown addresses                                                              0.05s  
+  ✓ user can reset password with the issued code                                                                 0.10s  
+  ✓ reset password rejects an invalid code                                                                       5.74s  
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response                                                                1.10s  
+
+  Tests:    40 passed (140 assertions)
+  Duration: 54.70s
+

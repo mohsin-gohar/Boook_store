@@ -32,6 +32,8 @@ class OrderResource extends JsonResource
             'items' => $items,
             'subtotal' => (float) $this->subtotal,
             'shipping' => (float) $this->shipping,
+            'discount' => (float) ($this->discount ?? 0),
+            'promo_code' => (string) ($this->promo_code ?? ''),
             'total' => $total,
             'total_amount' => $total,
             'status' => $this->status,

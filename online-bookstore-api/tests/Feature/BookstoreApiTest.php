@@ -290,6 +290,42 @@ class BookstoreApiTest extends TestCase
         $this->assertEquals(8, $book->fresh()->stock);
     }
 
+    public function test_checkout_applies_promo_code_discount(): void
+    {
+        $user = $this->createUser();
+        $book = $this->createBook(['price' => 25.00, 'stock' => 10]);
+        Cart::create(['user_id' => $user->id, 'book_id' => $book->id, 'quantity' => 2]);
+
+        $response = $this->actingAs($user, 'sanctum')->postJson('/api/orders/checkout', [
+            'shipping_address' => '789 Oak Ave, Metropolis, NY 10001, USA',
+            'promo_code' => 'aptech20',
+        ])->assertStatus(201)
+            ->assertJsonPath('data.promo_code', 'APTECH20');
+
+        $this->assertEqualsWithDelta(10.0, $response->json('data.discount'), 0.01);
+        $this->assertEqualsWithDelta(40.0, $response->json('data.total_amount'), 0.01);
+
+        $this->assertDatabaseHas('orders', [
+            'promo_code' => 'APTECH20',
+            'discount' => 10.00,
+        ]);
+    }
+
+    public function test_checkout_rejects_invalid_promo_code(): void
+    {
+        $user = $this->createUser();
+        $book = $this->createBook(['price' => 25.00, 'stock' => 10]);
+        Cart::create(['user_id' => $user->id, 'book_id' => $book->id, 'quantity' => 1]);
+
+        $this->actingAs($user, 'sanctum')->postJson('/api/orders/checkout', [
+            'shipping_address' => '1 St',
+            'promo_code' => 'NOPE',
+        ])->assertStatus(422)
+            ->assertJsonValidationErrors(['promo_code']);
+
+        $this->assertDatabaseCount('orders', 0);
+    }
+
     public function test_checkout_fails_on_empty_cart(): void
     {
         $user = $this->createUser();

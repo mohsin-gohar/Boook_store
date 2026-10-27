@@ -1,0 +1,16 @@
+[Sun Oct 25 01:15:39 2026] PHP 8.2.12 Development Server (http://127.0.0.1:8011) started
+[Sun Oct 25 01:15:41 2026] 127.0.0.1:58772 Accepted
+[Sat Oct 24 22:15:41 2026] 127.0.0.1:58772 [GET] URI: /api/health
+[Sun Oct 25 01:15:43 2026] 127.0.0.1:58772 Closing
+[Sun Oct 25 01:15:43 2026] 127.0.0.1:58774 Accepted
+[Sat Oct 24 22:15:43 2026] 127.0.0.1:58774 [GET] URI: /api/health
+[Sun Oct 25 01:15:43 2026] 127.0.0.1:58774 Closing
+[Sun Oct 25 01:15:43 2026] 127.0.0.1:58776 Accepted
+[Sat Oct 24 22:15:43 2026] 127.0.0.1:58776 [GET] URI: /api/categories
+[Sun Oct 25 01:15:44 2026] 127.0.0.1:58776 Closing
+[Sun Oct 25 01:15:44 2026] 127.0.0.1:58778 Accepted
+[Sat Oct 24 22:15:44 2026] 127.0.0.1:58778 [GET] URI: /api/books
+[Sun Oct 25 01:15:44 2026] 127.0.0.1:58778 Closing
+[Sun Oct 25 01:15:44 2026] 127.0.0.1:58781 Accepted
+[Sat Oct 24 22:15:44 2026] 127.0.0.1:58781 [GET] URI: /api/books
+[Sun Oct 25 01:15:44 2026] 127.0.0.1:58781 Closing

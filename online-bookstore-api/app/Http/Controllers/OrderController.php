@@ -80,6 +80,7 @@ class OrderController extends Controller
             'items' => ['required', 'array', 'min:1'],
             'items.*.book_id' => ['required', 'integer', 'exists:books,id'],
             'items.*.qty' => ['required', 'integer', 'min:1', 'max:100'],
+            'promo_code' => ['nullable', 'string', 'max:50'],
         ]);
 
         $user = $request->user();
@@ -133,13 +134,43 @@ class OrderController extends Controller
                 ? 0.0
                 : self::FLAT_SHIPPING_FEE;
 
+            $promoCode = strtoupper(trim((string) ($validated['promo_code'] ?? '')));
+            $discount = 0.0;
+
+            if ($promoCode !== '') {
+                switch ($promoCode) {
+                    case 'APTECH20':
+                        $discount = $subtotal * 0.20;
+                        break;
+                    case 'BOOKSTORE10':
+                        $discount = $subtotal * 0.10;
+                        break;
+                    case 'WELCOME15':
+                        $discount = $subtotal > 15 ? 15.0 : $subtotal * 0.5;
+                        break;
+                    case 'FREESHIP':
+                        $shipping = 0.0;
+                        break;
+                    default:
+                        DB::rollBack();
+
+                        return ApiResponse::error('Invalid promo code.', 422, [
+                            'promo_code' => ['The promo code is invalid or has expired.'],
+                        ]);
+                }
+
+                $discount = round(min($discount, $subtotal), 2);
+            }
+
             $now = now();
 
             $order = Order::create([
                 'user_id' => $user->id,
                 'subtotal' => $subtotal,
                 'shipping' => $shipping,
-                'total' => $subtotal + $shipping,
+                'discount' => $discount,
+                'promo_code' => $promoCode !== '' ? $promoCode : null,
+                'total' => round($subtotal - $discount + $shipping, 2),
                 'status' => 'pending',
                 'address' => $validated['address'],
                 'payment_method' => $validated['payment_method'],
@@ -263,6 +294,7 @@ class OrderController extends Controller
         $validated = $request->validate([
             'shipping_address' => ['required', 'string', 'max:500'],
             'payment_method' => ['nullable', 'string', 'max:255'],
+            'promo_code' => ['nullable', 'string', 'max:50'],
         ]);
 
         $user = $request->user();
@@ -277,6 +309,7 @@ class OrderController extends Controller
         $request->merge([
             'address' => $addressLine,
             'payment_method' => $validated['payment_method'] ?? 'Cash on delivery',
+            'promo_code' => $validated['promo_code'] ?? null,
             'items' => $cartItems->map(fn (Cart $item) => [
                 'book_id' => $item->book_id,
                 'qty' => $item->quantity,

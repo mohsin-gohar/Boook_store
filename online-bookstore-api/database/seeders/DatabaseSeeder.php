@@ -517,7 +517,7 @@ class DatabaseSeeder extends Seeder
                     'pages' => 310,
                     'publisher' => 'HarperCollins',
                     'release_date' => '1937-09-21',
-                    'cover_image' => 'https://covers.openlibrary.org/b/isbn/9780261102217-L.jpg',
+                    'cover_image' => 'https://upload.wikimedia.org/wikipedia/en/4/4a/TheHobbit_FirstEdition.jpg',
                 ],
                 [
                     'title' => 'The Fellowship of the Ring',
@@ -1182,7 +1182,7 @@ class DatabaseSeeder extends Seeder
                     'pages' => 68,
                     'publisher' => 'Amazon Original',
                     'release_date' => '2019-09-17',
-                    'cover_image' => 'https://covers.openlibrary.org/b/isbn/9781542019774-L.jpg',
+                    'cover_image' => 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400',
                 ],
                 [
                     'title' => '1984',

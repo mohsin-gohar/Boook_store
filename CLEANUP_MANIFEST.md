@@ -31,6 +31,8 @@ Quarantine Destination: `F:\flutter\online_bookstore\quarantine_20261022\`
 | 15 | `mysqld_out.log` | Empty 0-byte log file | Root directory | Very Low | **Quarantine** | 0 bytes; MySQL daemon logs to XAMPP / task stdout |
 | 16 | `mysql_install.err.log` | Empty 0-byte log file | Root directory | Very Low | **Quarantine** | 0 bytes; one-off setup log |
 | 17 | `mysql_install.log` | One-off MySQL initialization output log | Root directory | Very Low | **Quarantine** | Informational setup log |
+| 18 | `bookstore_app/lib/presentation/faq_screen.dart.bak` | Backup copy of FAQ screen component | `lib/` directory — 0 references | Very Low | **Quarantine** | Duplicate backup file in source tree; active `faq_screen.dart` is in place |
+| 19 | `bookstore_app/build_temp.txt` | Temporary zero-byte build artifact | Flutter project files — 0 references | Very Low | **Quarantine** | Temporary file created during build check; 0 bytes |
 
 ---
 
@@ -46,4 +48,4 @@ Quarantine Destination: `F:\flutter\online_bookstore\quarantine_20261022\`
 | `online-bookstore-api/database/migrations/*` | 14 applied Laravel schema migrations |
 | `bookstore_app/pubspec.yaml`, `pubspec.lock` | Flutter package declarations and exact dependency lockfile |
 | `bookstore_app/analysis_options.yaml` | Flutter linter rules |
-| `bookstore_app/lib/**/*` | All 123 source files verified as actively imported and used |
+| `bookstore_app/lib/**/*` | All source files verified as actively imported and used |

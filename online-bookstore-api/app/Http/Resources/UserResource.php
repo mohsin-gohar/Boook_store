@@ -13,11 +13,13 @@ class UserResource extends JsonResource
      */
     private array $extra = [];
 
-    public function __construct($resource, array $extra = [])
+    public function __construct($resource, mixed $extra = [])
     {
         parent::__construct($resource);
 
-        $this->extra = $extra;
+        // Laravel's collection mapper passes the array key as the second
+        // constructor argument, so only accept it when it really is a payload.
+        $this->extra = is_array($extra) ? $extra : [];
     }
 
     /**

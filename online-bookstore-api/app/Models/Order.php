@@ -13,6 +13,8 @@ class Order extends Model
         'user_id',
         'subtotal',
         'shipping',
+        'discount',
+        'promo_code',
         'total',
         'status',
         'address',
@@ -26,6 +28,7 @@ class Order extends Model
     protected $casts = [
         'subtotal' => 'decimal:2',
         'shipping' => 'decimal:2',
+        'discount' => 'decimal:2',
         'total' => 'decimal:2',
         'timeline' => 'array',
         'order_date' => 'datetime',
